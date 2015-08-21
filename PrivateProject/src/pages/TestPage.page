@@ -1,0 +1,61 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false"
+    docType="html-5.0" controller="TestController" applyBodyTag="fase" applyHtmlTag="false">
+
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width"/>
+    <title></title>
+   <!--ionic css-->
+    <link href="https://code.ionicframework.com/1.0.0-beta.14/css/ionic.css" rel="stylesheet"/>
+	<!--ui routing js lib-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+    <!--ionic js-->
+    <script src="https://code.ionicframework.com/1.0.0-beta.14/js/ionic.bundle.js"></script>
+    <!--app js-->
+    <script src="{!URLFOR($Resource.Ionic,'Ionic/app/IonicAccount.js')}"></script>
+
+</head>    
+
+<body ng-app="starter">
+
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="Contact" fields="Id, Name, Title"/>
+    </apex:remoteObjects>
+
+    <ion-side-menus ng-controller="menuCtrl" drag-content="true" enable-menu-with-back-views="true">
+
+	  <ion-side-menu-content drag-content="true">
+	  		<ion-nav-bar class="bar-positive" align-title="center">
+	  				<ion-nav-title>
+	  				  Telenet
+	  				</ion-nav-title>
+	  				<ion-nav-buttons side="left">
+                			 <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+	  				</ion-nav-buttons>
+	  		</ion-nav-bar>
+	  		   <ion-nav-view></ion-nav-view>
+    	</ion-side-menu-content>
+
+    	<ion-side-menu side="left"> <!--use this and it will stay open expose-aside-when="(min-width:750px) and (max-width:1800px)-->
+    		<ion-header-bar align-title="center" class="bar-positive">
+               <h1 class="title">MenuLeft</h1>	
+    		</ion-header-bar>
+
+    		<ion-content has-header="true">
+    			<ion-list ng-repeat="menuItem in menuItems">
+    				<ion-item ui-sref="{{menuItem.state}}" class="item-icon-lefte">
+    					{{menuItem.text}}
+    				</ion-item>
+    			</ion-list>
+			</ion-content>
+    	</ion-side-menu>
+
+    </ion-side-menus>
+
+</body>
+
+</html>
+
+</apex:page>

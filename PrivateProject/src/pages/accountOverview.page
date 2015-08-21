@@ -1,0 +1,52 @@
+<apex:page showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false" docType="html-5.0">
+
+  <ion-view view-title="account">
+    <ion-content ng-controller="accOverviewCtrl">
+
+      <div class="list" style="margin-left:35%;width:30%;margin-top:10%" ng-click="openModal()">
+        <ul ng-repeat="accountItem in accountItems">
+         <li>
+           <a class="item item-icon-left" href="#">
+           {{accountItem.firstName}} <span style='color:red;margin-left:10px;font-weight:bold'>{{accountItem.lastName}}</span>
+             <i class="icon ion-person-stalker"></i>
+             Contacts <span class="badge badge-assertive">{{accountItem.contacts}}</span>
+             </a>
+             </li>
+        </ul>
+      </div>
+    </ion-content>
+  </ion-view>
+
+<script id="contact-modal.html" type="text/ng-template">
+  <div class="modal" style="width: 40%; height: 20%">
+    <ion-header-bar class="bar-positive">
+      <h1 class="title">Account Info</h1>
+    </ion-header-bar>
+
+    <ion-content has-header="true">
+
+    <img src="https://pbs.twimg.com/profile_images/3724812332/50cfbe1ffc659053a784718fbe033d00_400x400.jpeg" style="margin-left:10px;margin-top:10px" width="150" height="150">
+
+     <table style="margin-left:30%;margin-top:-15%">
+      <tr>
+        <td><span style='color:red;font-weight:bold;margin-left:10px'>Naam: </span><span style='color:black;font-weight:bold'>Claudio Barjas Martinez</span></td>
+        <td><span style='color:red;font-weight:bold;margin-left:20px'>Beroep: </span><span style='color:black;font-weight:bold'>IT Programmeur</span></td>
+      </tr>
+
+       <tr>
+      <td><span style='color:red;font-weight:bold;margin-left:10px'>Adress: </span><span style='color:black;font-weight:bold'>Jos De Greevestraat 47</span></td>         
+      <td><span style='color:red;font-weight:bold;margin-left:20px'>Telefoon: </span><span style='color:black;font-weight:bold'>0484634569</span></td>
+      </tr>
+
+      <tr>
+        <td><span style='color:red;font-weight:bold;margin-left:10px'>Fax: </span><span style='color:black;font-weight:bold'>0483634569</span></td> 
+        <td><span style='color:red;font-weight:bold;margin-left:20px'>Diploma: </span><span style='color:black;font-weight:bold'>Bachelor Engineer</span></td> 
+      </tr>
+
+     </table>
+
+    </ion-content>
+  </div>
+</script>
+
+</apex:page>

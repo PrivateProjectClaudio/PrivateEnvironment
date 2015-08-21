@@ -1,0 +1,8 @@
+<apex:page showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+
+	<ion-view view-title="contact">
+		<ion-content>
+			<h1>Contact</h1>
+		</ion-content>
+</ion-view>
+  </apex:page>
